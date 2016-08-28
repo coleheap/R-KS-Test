@@ -1,0 +1,13 @@
+#exponential
+exponential<-rexp(length(thick), length(thick)/sum(thick))
+ks.test(thick, exponential)  #rexp generates random exponential distribution
+
+plot(ecdf(thick), lty=1, verticals=TRUE)
+plot(ecdf(exponential), col="red", lty=1, add=TRUE, verticals=TRUE)
+plot(ecdf(exponential), col="red", lty=1, add=TRUE, verticals=TRUE)
+plot(ecdf(exponential), col="red", lty=1, add=TRUE, verticals=TRUE)
+
+#log
+lognormal<-rlnorm(length(thick), meanlog=mean(log(thick)), sdlog=sd(log(thick)))
+ks.test(thick, lognormal)  #rexp generates random log distribution
+plot(ecdf(lognormal), col="green", lty=1, add=TRUE, verticals=TRUE)
