@@ -1,0 +1,2 @@
+# R-KS-Test
+The Kolmogorov–Smirnov test (K–S test or KS test) is a nonparametric test of the equality of continuous, one-dimensional probability distributions that can be used to compare a sample with a reference probability distribution, or to compare two samples. This repository contains R coding and workflow for running KS-tests among turbidite bedding thicknesses from conventional rotary core.
