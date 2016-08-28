@@ -1,0 +1,107 @@
+#exponential 2500 iterations
+testresult3 = numeric(length(thick))
+for (i in 1:2500){
+exponential<-rexp(length(thick), length(thick)/sum(thick))
+w2 = ks.test(exponential,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#exponential 2500 iterations envelope
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{ plot(ecdf(exponential), col="grey", lty=1, add=TRUE, verticals=TRUE)
+lines(ecdf(thick), lty=1, verticals=TRUE)
+exponential<-rexp(length(thick), length(thick)/sum(thick))
+w2 = ks.test(exponential,thick)
+if (w2$p.value > 0.05){testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#exponential 2500 iterations envelope w/thick plot
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{ plot(ecdf(exponential), col="grey", lty=1, add=TRUE, verticals=TRUE)
+lines(ecdf(thick), lty=1, verticals=TRUE)
+exponential<-rexp(length(thick), length(thick)/sum(thick))
+w2 = ks.test(exponential,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#lognormal 2500 iterations
+testresult3 = numeric(length(thick))
+for (i in 1:2500){
+lognormal<-rlnorm(length(thick), meanlog=mean(log(thick)), sdlog=sd(log(thick)))
+w2 = ks.test(lognormal,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#lognormal 2500 iterations envelope
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{plot(ecdf(lognormal), col="green", lty=1, add=TRUE, verticals=TRUE)
+lognormal<-rlnorm(length(thick), meanlog=mean(log(thick)), sdlog=sd(log(thick)))
+w2 = ks.test(lognormal,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#lognormal 2500 iteration envelope w/thick plot
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{plot(ecdf(lognormal), col="grey", lty=1, add=TRUE, verticals=TRUE)
+lines(ecdf(thick), lty=1, verticals=TRUE)
+lognormal<-rlnorm(length(thick), meanlog=mean(log(thick)), sdlog=sd(log(thick)))
+w2 = ks.test(lognormal,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#powerlaw 2500 iterations
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{ power<-rpowerlaw(length(thick),alpha,xmin)
+w2 = ks.test(power,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#powerlaw 2500 iterations envelope
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{ plot(ecdf(power), col="grey", lty=1, add=TRUE, verticals=TRUE)
+power<-rpowerlaw(length(thick),alpha,xmin)
+w2 = ks.test(power,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
+
+#powerlaw 2500 iterations envelope w/thick plot
+testresult3 = numeric(length(thick))
+for (i in 1:2500)
+{ plot(ecdf(power), col="grey", lty=1, add=TRUE, verticals=TRUE)
+lines(ecdf(thick), lty=1, verticals=TRUE)
+power<-rpowerlaw(length(thick),alpha,xmin)
+w2 = ks.test(power,thick)
+if (w2$p.value > 0.05){
+testresult3[i] = 1}
+if (w2$p.value <= 0.05){
+testresult3[i] = 0} }
+sum(testresult3)
